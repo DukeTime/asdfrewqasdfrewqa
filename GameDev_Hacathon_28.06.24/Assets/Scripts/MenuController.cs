@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
@@ -16,16 +17,8 @@ public class MenuController : MonoBehaviour
     {
         
     }
-    public void PlayButton()
+    public void ButtonClick(int scene_number)
     {
-        background.transform.position = new Vector3(-480, 0, 0);
-        button1.transform.position = new Vector3(-480, 0, 0);
-        button2.transform.position = new Vector3(-480, 0, 0);
-    }
-    public void BackButton()
-    {
-        background.transform.position = Vector3.zero;
-        button1.transform.position = new Vector3(-480, 0, 0);
-        button2.transform.position = new Vector3(-480, 0, 0);
+        SceneManager.LoadScene(scene_number);
     }
 }
