@@ -22,4 +22,10 @@ public class MenuController : MonoBehaviour
         button1.transform.position = new Vector3(-480, 0, 0);
         button2.transform.position = new Vector3(-480, 0, 0);
     }
+    public void BackButton()
+    {
+        background.transform.position = Vector3.zero;
+        button1.transform.position = new Vector3(-480, 0, 0);
+        button2.transform.position = new Vector3(-480, 0, 0);
+    }
 }
