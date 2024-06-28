@@ -834,10 +834,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterRenderers:
   - {fileID: 410545730}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   waterColor: {r: 0.18431373, g: 0.666, b: 0.9921569, a: 1}
   waterTex: {fileID: 2800000, guid: b3b93417e764a48438369dfd5de14b56, type: 3}
   waterTile: {x: 0.15, y: 0.15}
@@ -1166,14 +1162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b610d095b4e1b044805a720533b3ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  waterRenderers: []
   waterColor: {r: 0.14705884, g: 0.823, b: 0.834, a: 1}
   waterTex: {fileID: 2800000, guid: 92b12dd963505404f9025476f49cb3c9, type: 3}
   waterTile: {x: 0.12, y: 0.12}
