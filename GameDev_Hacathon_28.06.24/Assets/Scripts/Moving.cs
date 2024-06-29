@@ -5,6 +5,14 @@ using System.Threading;
 
 public class Moving : MonoBehaviour
 {
+    public string FishType;
+    private string[] FishesI = { "Щука", "Осётр" };
+    private string[] FishesII;
+    [SerializeField] private Dictionary<string, int> typeDict = new Dictionary<string, int>()
+    {
+        {"Щука", 2},
+        {"Осётр", 2}
+    };
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float start_fish_x;
     private int jump_plan = 0;
@@ -12,6 +20,7 @@ public class Moving : MonoBehaviour
     System.Random ran = new System.Random();
     void Start()
     {
+        FishType = FishesI[ran.Next(0, 2)];
     }
 
     // Update is called once per frame
