@@ -11,6 +11,7 @@
         [SerializeField] private Spawner spawner_script;
         [SerializeField] private Camera game_camera;
         [SerializeField] private GameObject boat;
+        [SerializeField] private Animator boat_animator;
         System.Random ran = new System.Random();
         private Moving moving_script;
         private GameObject fish;
@@ -33,6 +34,7 @@
 
         private void ShipStop()
         {
+            boat_animator.SetBool("going", false);
             fish = GameObject.FindGameObjectWithTag("Fish");
             moving_script = fish.GetComponent<Moving>();
 

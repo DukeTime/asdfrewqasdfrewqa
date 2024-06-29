@@ -5,6 +5,7 @@ using UnityEngine;
 public class Moving : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private float start_fish_x;
     private int jump_plan = 0;
     public bool StopMoving = false;
     System.Random ran = new System.Random();
@@ -27,18 +28,21 @@ public class Moving : MonoBehaviour
     }
     public IEnumerator FishDodjing(Vector3 fish_pos)
     {
+        start_fish_x = transform.position.x;
         while (transform.position.z > -5)
         {
             float timer = 0;
+            rb.velocity = Vector3.zero;
             while (jump_plan == 0)
                 jump_plan = ran.Next(-3, 3);
             //Vector3 point = fish_pos + new Vector3(ran.Next(-14, 14), 0, ran.Next(-5, 12));
             transform.rotation = Quaternion.Euler(90, jump_plan > 0 ? 90 : -90, 0);
-            rb.AddForce(Vector3.right * 100f);
+            rb.AddForce(jump_plan > 0 ? Vector3.right * 300f : Vector3.left * 300f);
             jump_plan += jump_plan > 0 ? -1 : 1;
-            if (transform.position.x > 15)
+            if (transform.position.x - start_fish_x > 5 || transform.position.x - start_fish_x < -5)
             {
                 //dfvnjdfnvjdnfvdfvdfvdfvdf
+                rb.velocity = Vector3.zero;
             }
             while (timer < 1)
             {

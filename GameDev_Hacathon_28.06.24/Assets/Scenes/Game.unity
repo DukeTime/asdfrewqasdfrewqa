@@ -754,6 +754,7 @@ MonoBehaviour:
   spawner_script: {fileID: 985781407}
   game_camera: {fileID: 1351380140}
   boat: {fileID: 1720908040}
+  boat_animator: {fileID: 1720908041}
 --- !u!4 &937875274
 Transform:
   m_ObjectHideFlags: 0
