@@ -26,8 +26,8 @@ public class Spawner : MonoBehaviour
             timeSpawn -= Time.deltaTime;
             if (timeSpawn <= 0)
             {
-                timeSpawn = ran.Next(3,5);
-                x = ran.Next(3,12) * (ran.Next(0, 2) == 0 ? -1 : 1);
+                 timeSpawn = ran.Next(3,5);
+                x = ran.Next(5,14) * (ran.Next(0, 2) == 0 ? -1 : 1);
                 pos = new Vector3(x, y, z);
                 Instantiate(fishPrefab, pos, Quaternion.Euler(0,180,0));
             }
