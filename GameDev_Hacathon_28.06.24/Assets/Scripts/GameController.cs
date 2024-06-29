@@ -3,6 +3,7 @@
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
+    using UnityEngine.SceneManagement;
 
     public class GameController : MonoBehaviour
     {
@@ -72,6 +73,11 @@
         {
             StartCoroutine(moving_script.FishDodjing(fish.transform.position));
 
+        }
+
+        public void BackTo(int scene_num)
+        {
+            SceneManager.LoadScene(scene_num);
         }
     }
 }

@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
 
 public class Moving : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float start_fish_x;
+    [SerializeField] private Animator succes_animation;
     private int jump_plan = 0;
     public bool StopMoving = false; 
     System.Random ran = new System.Random();
@@ -73,6 +75,6 @@ public class Moving : MonoBehaviour
     }
     private void FishingEnding()
     {
-
+        succes_animation.SetTrigger("PlaySuccesAnim");
     }
 }
