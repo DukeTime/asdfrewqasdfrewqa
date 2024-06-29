@@ -15,11 +15,11 @@ public class Moving : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!StopMoving)
         {
-            transform.position += new Vector3(0, 0, -0.63f);
+            transform.position += new Vector3(0, 0, -0.4f);
         }
         if (transform.position.z < -30)
         {
@@ -37,15 +37,20 @@ public class Moving : MonoBehaviour
                 jump_plan = ran.Next(-3, 3);
             //Vector3 point = fish_pos + new Vector3(ran.Next(-14, 14), 0, ran.Next(-5, 12));
             transform.rotation = Quaternion.Euler(90, jump_plan > 0 ? 90 : -90, 0);
-            rb.AddForce(jump_plan > 0 ? Vector3.right * 300f : Vector3.left * 300f);
+            rb.AddForce(jump_plan > 0 ? Vector3.right * 200f : Vector3.left * 200f);
             jump_plan += jump_plan > 0 ? -1 : 1;
-            if (transform.position.x - start_fish_x > 5 || transform.position.x - start_fish_x < -5)
-            {
-                //dfvnjdfnvjdnfvdfvdfvdfvdf
-                rb.velocity = Vector3.zero;
-            }
             while (timer < 1)
             {
+                if (transform.position.x - start_fish_x > 12)
+                {
+                    rb.velocity = new Vector3(rb.velocity.x > 0 ? 0 : rb.velocity.x, rb.velocity.y, rb.velocity.z);
+                    rb.isKinematic = false;
+                }
+                else if (transform.position.x - start_fish_x < -12)
+                {
+                    rb.velocity = new Vector3(rb.velocity.x > 0 ? rb.velocity.x : 0, rb.velocity.y, rb.velocity.z);
+                    rb.isKinematic = false;
+                }
                 if (Input.GetMouseButtonDown(0))
                 {
                     if (Input.mousePosition.x > 562.5)
