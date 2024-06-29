@@ -35,7 +35,7 @@
             }
             else
             {
-                if (fish.transform.position.z < -20)
+                if (fish.transform.position.z < -15)
                 {
                     fish.SetActive(false);
                     EndFishing();
@@ -48,7 +48,6 @@
             boat_animator.SetBool("going", false);
             fish = GameObject.FindGameObjectWithTag("Fish");
             splash = GameObject.FindGameObjectWithTag("Splash");    
-            moving_script = splash.GetComponent<Moving>();
             moving_script = fish.GetComponent<Moving>();
 
             moving_script.StopMoving = true;
