@@ -18,6 +18,8 @@
         [SerializeField] private Animator boat_animator;
         [SerializeField] private Animator succes_animation;
         [SerializeField] private Image hp_bar;
+        [SerializeField] private Image gradient1;
+        [SerializeField] private Image gradient2;
         System.Random ran = new System.Random();
         private Moving moving_script;
         private GameObject fish;
@@ -81,12 +83,14 @@
                     fish.SetActive(false);
                     EndFishing(moving_script.FishType);
                 }
-                if (transform.position.x - moving_script.start_fish_x > 11)
+                if (fish.transform.position.x - moving_script.start_fish_x > 11)
                 {
+                    gradient2.color = new Color(255, 255, 255, 255);
                     FisherDamage();
                 }
-                else if (transform.position.x - moving_script.start_fish_x < -11)
+                else if (fish.transform.position.x - moving_script.start_fish_x < -11)
                 {
+                    gradient1.color = new Color(255, 255, 255, 255);
                     FisherDamage();
                 }
             }
