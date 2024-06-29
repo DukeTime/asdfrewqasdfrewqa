@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public bool StopSpawning = false;
     public GameObject fishPrefab;
     public int maxFish = 25;
     public float distance = 3;
