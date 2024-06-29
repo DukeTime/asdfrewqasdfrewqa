@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 273583005706533244}
   m_Layer: 0
   m_Name: FishPrefab
-  m_TagString: Fish
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 273583005706533240}
   start_fish_x: 0
-  succes_animation: {fileID: 0}
   StopMoving: 0
 --- !u!1001 &1210433073358678960
 PrefabInstance:
