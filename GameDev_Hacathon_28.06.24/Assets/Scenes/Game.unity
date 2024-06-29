@@ -734,8 +734,8 @@ MonoBehaviour:
   boat_animator: {fileID: 1426517282}
   succes_animation: {fileID: 3091135}
   hp_bar: {fileID: 1554582674}
-  title_image: {fileID: 958286394}
-  fish_image: {fileID: 1024486868}
+  title_image: {fileID: 1024486868}
+  fish_image: {fileID: 958286394}
   "\u0429\u0443\u043A\u0430": {fileID: 21300000, guid: f549d24cb49966f4d89555ff330c40da,
     type: 3}
   "\u041A\u0430\u0440\u043F": {fileID: 21300000, guid: d737bb9f2cb85e2428677b3fb5d925c5,
