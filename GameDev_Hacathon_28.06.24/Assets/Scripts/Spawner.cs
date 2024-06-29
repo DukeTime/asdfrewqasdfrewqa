@@ -30,7 +30,7 @@ public class Spawner : MonoBehaviour
                  timeSpawn = ran.Next(3,5);
                 if (transform.childCount < maxFish)
                 {
-                    x = ran.Next(-14,14);
+                    x = ran.Next(5,14) * (ran.Next(0, 2) == 0 ? -1 : 1);
                     //z = ran.Next(34,36);
                     pos = new Vector3(x, y, z);
                     Instantiate(fishPrefab, pos, Quaternion.Euler(90,0,0));
