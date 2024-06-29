@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2b0947e971e718840bba240e2df6663b, type: 2}
+  - {fileID: 2100000, guid: 9c830aac00ec8e84ca8488c26a4f1e0f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 273583005706533240}
   start_fish_x: 0
+  succes_animation: {fileID: 0}
   StopMoving: 0
 --- !u!1001 &1210433073358678960
 PrefabInstance:
