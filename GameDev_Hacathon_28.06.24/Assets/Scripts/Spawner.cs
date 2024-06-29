@@ -33,7 +33,7 @@ public class Spawner : MonoBehaviour
                     x = ran.Next(-14,14);
                     //z = ran.Next(34,36);
                     pos = new Vector3(x, y, z);
-                    Instantiate(fishPrefab, pos, Quaternion.identity);
+                    Instantiate(fishPrefab, pos, Quaternion.Euler(90,0,0));
                 }
             }
         }

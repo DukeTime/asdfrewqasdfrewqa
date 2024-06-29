@@ -9,6 +9,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private Spawner spawner_script;
     [SerializeField] private Camera game_camera;
     [SerializeField] private GameObject boat;
+    System.Random ran = new System.Random();
+    private Moving moving_script;
+    private GameObject fish;
     void Start()
     {
         //water = GameObject.FindGameObjectWithTag("Water").GetComponent<WaterPropertyBlockSetter>();
@@ -28,8 +31,8 @@ public class GameController : MonoBehaviour
 
     private void ShipStop()
     {
-        GameObject fish = GameObject.FindGameObjectWithTag("Fish");
-        Moving moving_script = fish.GetComponent<Moving>();
+        fish = GameObject.FindGameObjectWithTag("Fish");
+        moving_script = fish.GetComponent<Moving>();
 
         moving_script.StopMoving = true;
         spawner_script.StopSpawning = true;
@@ -55,5 +58,12 @@ public class GameController : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
+        FishCatching();
+    }
+
+    private void FishCatching()
+    {
+        StartCoroutine(moving_script.FishDodjing(fish.transform.position));
+
     }
 }
