@@ -21,6 +21,43 @@
         System.Random ran = new System.Random();
         private Moving moving_script;
         private GameObject fish;
+
+        [SerializeField] public Image title_image;
+
+        [SerializeField] public Image fish_image;
+    
+        [SerializeField] public Sprite Щука;
+        [SerializeField] public Sprite Карп;
+        [SerializeField] public Sprite Осетр;
+        [SerializeField] public Sprite Судак;
+        [SerializeField] public Sprite Горбуша;
+        [SerializeField] public Sprite Толстолобик;
+        [SerializeField] public Sprite Голавль;
+        [SerializeField] public Sprite Акула;
+        [SerializeField] public Sprite Арапаима;
+        [SerializeField] public Sprite Скат;
+        [SerializeField] public Sprite Краб;
+        [SerializeField] public Sprite Пиранья;
+        [SerializeField] public Sprite Сом;
+        [SerializeField] public Sprite Угорь;
+
+
+        [SerializeField] public Sprite Щука_надпись;
+        [SerializeField] public Sprite Карп_надпись;
+        [SerializeField] public Sprite Осетр_надпись;
+        [SerializeField] public Sprite Судак_надпись;
+        [SerializeField] public Sprite Горбуша_надпись;
+        [SerializeField] public Sprite Толстолобик_надпись;
+        [SerializeField] public Sprite Голавль_надпись;
+        [SerializeField] public Sprite Акула_надпись;
+        [SerializeField] public Sprite Арапаима_надпись;
+        [SerializeField] public Sprite Скат_надпись;
+        [SerializeField] public Sprite Краб_надпись;
+        [SerializeField] public Sprite Пиранья_надпись;
+        [SerializeField] public Sprite Сом_надпись;
+        [SerializeField] public Sprite Угорь_надпись;
+
+
         void Start()
         {
             rod_hp = max_rod_hp;
@@ -119,6 +156,66 @@
             int money = PlayerPrefs.GetInt("money");
             money = money + 10;
             PlayerPrefs.SetInt("money", money);
+
+            if (fish_type == "Щука"){
+                title_image.sprite = Щука;
+                fish_image.sprite = Щука_надпись;
+            }
+            if (fish_type == "Осетр"){
+                title_image.sprite = Осетр;
+                fish_image.sprite = Осетр_надпись;
+            }
+            if (fish_type == "Карп"){
+                title_image.sprite = Карп;
+                fish_image.sprite = Карп_надпись;
+            }
+            if (fish_type == "Судак"){
+                title_image.sprite = Судак;
+                fish_image.sprite = Судак_надпись;
+            }
+            if (fish_type == "Горбуша"){
+                title_image.sprite = Горбуша;
+                fish_image.sprite = Горбуша_надпись;
+            }
+            if (fish_type == "Толстолобик"){
+                title_image.sprite = Толстолобик;
+                fish_image.sprite = Толстолобик_надпись;
+            }
+            if (fish_type == "Голавль"){
+                title_image.sprite = Голавль;
+                fish_image.sprite = Голавль_надпись;
+            }
+            if (fish_type == "Акула"){
+                title_image.sprite = Акула;
+                fish_image.sprite = Акула_надпись;
+            }
+            if (fish_type == "Арапаима"){
+                title_image.sprite = Арапаима;
+                fish_image.sprite = Арапаима_надпись;
+            }
+            if (fish_type == "Скат"){
+                title_image.sprite = Скат;
+                fish_image.sprite = Скат_надпись;
+            }
+            if (fish_type == "Краб"){
+                title_image.sprite = Краб;
+                fish_image.sprite = Краб_надпись;
+            }
+            if (fish_type == "Пиранья"){
+                title_image.sprite = Пиранья;
+                fish_image.sprite = Пиранья_надпись;
+            }
+            if (fish_type == "Сом"){
+                title_image.sprite = Сом;
+                fish_image.sprite = Сом_надпись;
+            }
+            if (fish_type == "Угорь"){
+                title_image.sprite = Угорь;
+                fish_image.sprite = Угорь_надпись;
+            }
+
+
+
             succes_animation.SetTrigger("PlaySuccesAnim");
         }
     }
