@@ -271,7 +271,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -889,8 +889,8 @@ GameObject:
   - component: {fileID: 937875274}
   - component: {fileID: 937875273}
   m_Layer: 0
-  m_Name: GameController
-  m_TagString: Untagged
+  m_Name: Game Controller
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -912,6 +912,7 @@ MonoBehaviour:
   game_camera: {fileID: 1351380140}
   boat: {fileID: 1720908040}
   boat_animator: {fileID: 1720908041}
+  succes_animation: {fileID: 0}
 --- !u!4 &937875274
 Transform:
   m_ObjectHideFlags: 0
@@ -924,7 +925,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &985781405
 GameObject:

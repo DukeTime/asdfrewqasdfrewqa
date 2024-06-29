@@ -7,13 +7,11 @@ public class Moving : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float start_fish_x;
-    [SerializeField] private Animator succes_animation;
     private int jump_plan = 0;
     public bool StopMoving = false;
     System.Random ran = new System.Random();
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -39,7 +37,7 @@ public class Moving : MonoBehaviour
                 jump_plan = ran.Next(-3, 3);
             //Vector3 point = fish_pos + new Vector3(ran.Next(-14, 14), 0, ran.Next(-5, 12));
             transform.rotation = Quaternion.Euler(90, jump_plan > 0 ? 90 : -90, 0);
-            rb.AddForce(jump_plan > 0 ? Vector3.right * 200f : Vector3.left * 200f);
+            rb.AddForce(jump_plan > 0 ? Vector3.right * 300f : Vector3.left * 300f);
             jump_plan += jump_plan > 0 ? -1 : 1;
             while (timer < 1)
             {
@@ -58,12 +56,12 @@ public class Moving : MonoBehaviour
                     if (Input.mousePosition.x > 562.5)
                     {
                         //transform.Translate(new Vector3(ran.Next(1, 3), 0, ran.Next(-3, -1)));
-                        rb.AddForce(new Vector3(ran.Next(40, 60), 0, ran.Next(-30, -10)));
+                        rb.AddForce(new Vector3(ran.Next(100, 120), 0, ran.Next(-70, -50)));
                     }
                     else
                     {
                         //transform.Translate(new Vector3(ran.Next(-3, -1), 0, ran.Next(-3, -1)));
-                        rb.AddForce(new Vector3(ran.Next(-60, -40), 0, ran.Next(-30, -10)));
+                        rb.AddForce(new Vector3(ran.Next(-120, -100), 0, ran.Next(-70, -50)));
                     }
                 }
                 //transform.position = Vector3.MoveTowards(transform.position, point, Time.deltaTime * 15);
@@ -71,10 +69,5 @@ public class Moving : MonoBehaviour
                 yield return null;
             }
         }
-        FishingEnding();
-    }
-    private void FishingEnding()
-    {
-        succes_animation.SetTrigger("PlaySuccesAnim");
     }
 }
