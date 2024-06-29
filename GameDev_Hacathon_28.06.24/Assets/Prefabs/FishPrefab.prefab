@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 273583005706533244}
   m_Layer: 0
   m_Name: FishPrefab
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2d19fce84530b44acd422411d5b0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FishType: 
   rb: {fileID: 273583005706533240}
   start_fish_x: 0
   StopMoving: 0
