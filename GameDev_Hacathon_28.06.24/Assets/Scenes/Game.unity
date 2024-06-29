@@ -728,7 +728,7 @@ MonoBehaviour:
   spawner_script: {fileID: 985781407}
   game_camera: {fileID: 1351380140}
   boat: {fileID: 1426517280}
-  boat_animator: {fileID: 0}
+  boat_animator: {fileID: 1426517282}
   succes_animation: {fileID: 3091135}
 --- !u!4 &937875274
 Transform:
@@ -925,7 +925,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7e36ccc69158dd0469e4ae23c2744aa8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f549d24cb49966f4d89555ff330c40da, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
