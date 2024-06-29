@@ -37,11 +37,6 @@ namespace Assets.Scripts.Water
 
         private MaterialPropertyBlock materialPropertyBlock;
 
-        public void ShipStop()
-        {
-            moveDirection = new Vector2();
-        }
-
         public MaterialPropertyBlock MaterialPropertyBlock
         {
             get { return materialPropertyBlock; }
