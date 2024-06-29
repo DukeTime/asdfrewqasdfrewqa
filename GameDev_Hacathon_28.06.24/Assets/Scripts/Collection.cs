@@ -10,7 +10,7 @@ public class Collection : MonoBehaviour
     {
 
         string objectName = myObject.name;
-        Debug.Log(objectName);
+        
         int is_opened = PlayerPrefs.GetInt(objectName);
         if (is_opened == 1){
             GetComponent<Image>().color = new Color(255/255.0f, 255/255.0f, 255/255.0f);

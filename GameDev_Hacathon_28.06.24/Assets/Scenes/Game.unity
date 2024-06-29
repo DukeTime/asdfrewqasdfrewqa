@@ -728,7 +728,7 @@ MonoBehaviour:
   spawner_script: {fileID: 985781407}
   game_camera: {fileID: 1351380140}
   boat: {fileID: 1426517280}
-  boat_animator: {fileID: 0}
+  boat_animator: {fileID: 1426517282}
   succes_animation: {fileID: 3091135}
 --- !u!4 &937875274
 Transform:

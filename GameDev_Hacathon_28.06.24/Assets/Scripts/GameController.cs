@@ -87,7 +87,7 @@
         }
         private void EndFishing(string fish_type)
         {
-            string fish = "Щука";
+            string fish = fish_type;
             int is_already_catched = PlayerPrefs.GetInt(fish);
 
             if (is_already_catched == 0){    // если новая
@@ -98,6 +98,9 @@
                 Debug.Log("not new");
                 
             }
+            int money = PlayerPrefs.GetInt("money");
+            money = money + 10;
+            PlayerPrefs.SetInt("money", money);
             succes_animation.SetTrigger("PlaySuccesAnim");
         }
     }
