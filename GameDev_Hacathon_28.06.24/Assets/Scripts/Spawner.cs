@@ -9,16 +9,16 @@ public class Spawner : MonoBehaviour
     public float distance = 3;
     public float timeSpawn = 2f;
     System.Random ran = new System.Random();
-    public float x;
+    public float x = 0f;
     public float y = -10.3f;
-    public float z;
+    public float z = 38f;
     Vector3 pos;
 
     private void Start()
     {
 
     }
-
+    
     private void Update()
     {
         timeSpawn -= Time.deltaTime;
@@ -27,10 +27,10 @@ public class Spawner : MonoBehaviour
              timeSpawn = ran.Next(1,5);
             if (transform.childCount < maxFish)
             {
-                x = ran.Next(-14,16);
-                z = ran.Next(34,36);
+                x = ran.Next(-14,14);
+                //z = ran.Next(34,36);
                 pos = new Vector3(x, y, z);
-                Instantiate(fishPrefab, pos, Quaternion.identity, transform);
+                Instantiate(fishPrefab, pos, Quaternion.identity);
             }
         }
     }
