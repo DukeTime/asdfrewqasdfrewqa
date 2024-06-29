@@ -13,6 +13,7 @@
         [SerializeField] private Camera game_camera;
         [SerializeField] private GameObject boat;
         [SerializeField] private Animator boat_animator;
+        [SerializeField] private Animator succes_animation;
         System.Random ran = new System.Random();
         private Moving moving_script;
         private GameObject fish;
@@ -30,6 +31,13 @@
                 {
                     ShipStop();
                     game_phase = 1;
+                }
+            }
+            else
+            {
+                if (fish.transform.position.z < -5)
+                {
+                    EndFishing();
                 }
             }
         }
@@ -72,12 +80,16 @@
         private void FishCatching()
         {
             StartCoroutine(moving_script.FishDodjing(fish.transform.position));
-
+            
         }
 
         public void BackTo(int scene_num)
         {
             SceneManager.LoadScene(scene_num);
+        }
+        private void EndFishing()
+        {
+            succes_animation.SetTrigger("PlaySuccesAnim");
         }
     }
 }
