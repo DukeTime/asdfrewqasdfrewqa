@@ -69,5 +69,10 @@ public class Moving : MonoBehaviour
                 yield return null;
             }
         }
+        FishingEnding();
+    }
+    private void FishingEnding()
+    {
+
     }
 }
