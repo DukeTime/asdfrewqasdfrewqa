@@ -34,7 +34,7 @@
             }
             else
             {
-                if (fish.transform.position.z < -15)
+                if (fish.transform.position.z - moving_script.start_fish_z < -24)
                 {
                     fish.SetActive(false);
                     EndFishing(moving_script.FishType);
@@ -64,7 +64,7 @@
                 timer += Time.deltaTime;
                 yield return null;
             }
-            boat.transform.position = fish_position + new Vector3(0, 10.3f, -20);
+            boat.transform.position = fish_position + new Vector3(0, 10.3f, -25);
             timer = 0;
             while (timer < 1.5)
             {
