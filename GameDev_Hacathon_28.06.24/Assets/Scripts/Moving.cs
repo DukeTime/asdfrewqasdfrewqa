@@ -45,7 +45,7 @@ public class Moving : MonoBehaviour
             while (jump_plan == 0)
                 jump_plan = ran.Next(-3, 3);
             //Vector3 point = fish_pos + new Vector3(ran.Next(-14, 14), 0, ran.Next(-5, 12));
-            transform.rotation = Quaternion.Euler(90, jump_plan > 0 ? 90 : -90, 0);
+            transform.rotation = Quaternion.Euler(0, jump_plan > 0 ? 90 : -90, 0);
             rb.AddForce(jump_plan > 0 ? Vector3.right * 400f : Vector3.left * 400f);
             jump_plan += jump_plan > 0 ? -1 : 1;
             while (timer < 1)
