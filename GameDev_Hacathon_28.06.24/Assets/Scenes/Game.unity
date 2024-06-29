@@ -1084,6 +1084,7 @@ GameObject:
   m_Component:
   - component: {fileID: 937875274}
   - component: {fileID: 937875273}
+  - component: {fileID: 937875275}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: GameController
@@ -1186,6 +1187,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &937875275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937875272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5189d3c86e45644afcd818125a5bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &958286392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1757,11 +1770,17 @@ MonoBehaviour:
   waterRenderers:
   - {fileID: 2125807351}
   - {fileID: 219960276}
+<<<<<<< HEAD
   - {fileID: 0}
   - {fileID: 666444192}
   - {fileID: 493454847}
   - {fileID: 980416786}
   - {fileID: 0}
+=======
+  - {fileID: 666444192}
+  - {fileID: 493454847}
+  - {fileID: 980416786}
+>>>>>>> 615436104fa3cce53dd1a02b30843cd816164711
   waterColor: {r: 0.14705884, g: 0.823, b: 0.834, a: 1}
   waterTex: {fileID: 2800000, guid: 92b12dd963505404f9025476f49cb3c9, type: 3}
   waterTile: {x: 0.12, y: 0.12}
