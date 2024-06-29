@@ -20,7 +20,7 @@ public class Moving : MonoBehaviour
     System.Random ran = new System.Random();
     void Start()
     {
-        FishType = FishesI[ran.Next(0, 2)];
+        FishType = FishesI[ran.Next(0, 6)];
     }
 
     // Update is called once per frame
