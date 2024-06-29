@@ -87,6 +87,17 @@
         }
         private void EndFishing()
         {
+            string fish = "Щука";
+            int is_already_catched = PlayerPrefs.GetInt(fish);
+
+            if (is_already_catched == 0){    // если новая
+                PlayerPrefs.SetInt(fish, 1);
+                Debug.Log("new ");
+            }
+            else{
+                Debug.Log("not new");
+                
+            }
             succes_animation.SetTrigger("PlaySuccesAnim");
         }
     }
