@@ -9,6 +9,7 @@ public class ShopController : MonoBehaviour
 
 
     public int money;
+    public double mon;
     
     [SerializeField] public GameObject myObject;
 
@@ -24,6 +25,14 @@ public class ShopController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        myText.text = money.ToString();
+        if (money < 10000)
+        {
+            myText.text = money.ToString();
+        }
+        else if (money > 9999 && money < 100000)
+        {
+            float mon = money/1000;
+            myText.text = mon.ToString() + "k";
+        }
     }
 }
