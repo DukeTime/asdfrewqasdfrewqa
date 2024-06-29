@@ -20,6 +20,7 @@
         [SerializeField] private Image hp_bar;
         [SerializeField] private Image gradient1;
         [SerializeField] private Image gradient2;
+        [SerializeField] private RayForRod rfr;
         System.Random ran = new System.Random();
         private Moving moving_script;
         private GameObject fish;
@@ -78,6 +79,7 @@
             }
             else
             {
+                StartCoroutine(rfr.RodCor(fish));
                 if (fish.transform.position.z - moving_script.start_fish_z < -24)
                 {
                     fish.SetActive(false);
