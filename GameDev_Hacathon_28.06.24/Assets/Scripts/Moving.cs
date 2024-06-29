@@ -29,7 +29,7 @@ public class Moving : MonoBehaviour
     public IEnumerator FishDodjing(Vector3 fish_pos)
     {
         start_fish_x = transform.position.x;
-        while (transform.position.z > -5)
+        while (transform.position.z > -20)
         {
             float timer = 0;
             rb.velocity = Vector3.zero;

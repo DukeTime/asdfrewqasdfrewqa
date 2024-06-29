@@ -35,8 +35,9 @@
             }
             else
             {
-                if (fish.transform.position.z < -5)
+                if (fish.transform.position.z < -20)
                 {
+                    fish.SetActive(false);
                     EndFishing();
                 }
             }
