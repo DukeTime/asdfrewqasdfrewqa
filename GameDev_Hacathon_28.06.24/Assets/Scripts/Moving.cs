@@ -14,8 +14,9 @@ public class Moving : MonoBehaviour
         {"Осётр", 2}
     };
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float start_fish_x;
     private int jump_plan = 0;
+    public float start_fish_x;
+    public float start_fish_z;
     public bool StopMoving = false; 
     System.Random ran = new System.Random();
     void Start()
@@ -38,6 +39,7 @@ public class Moving : MonoBehaviour
     public IEnumerator FishDodjing(Vector3 fish_pos)
     {
         start_fish_x = transform.position.x;
+        start_fish_z = transform.position.z;
         while (transform.position.z > -20)
         {
             float timer = 0;
@@ -50,7 +52,7 @@ public class Moving : MonoBehaviour
             jump_plan += jump_plan > 0 ? -1 : 1;
             while (timer < 1)
             {
-                transform.Translate(Vector3.left * 0.065f);
+                transform.position += new Vector3(0, 0, -0.065f);
                 if (transform.position.x - start_fish_x > 12)
                 {
                     rb.velocity = new Vector3(rb.velocity.x > 0 ? 0 : rb.velocity.x, rb.velocity.y, rb.velocity.z);
