@@ -17,7 +17,6 @@
         System.Random ran = new System.Random();
         private Moving moving_script;
         private GameObject fish;
-        private GameObject splash;
         void Start()
         {
             //water = GameObject.FindGameObjectWithTag("Water").GetComponent<WaterPropertyBlockSetter>();
@@ -46,8 +45,6 @@
         {
             boat_animator.SetBool("going", false);
             fish = GameObject.FindGameObjectWithTag("Fish");
-            splash = GameObject.FindGameObjectWithTag("Splash");    
-            moving_script = splash.GetComponent<Moving>();
             moving_script = fish.GetComponent<Moving>();
 
             moving_script.StopMoving = true;
