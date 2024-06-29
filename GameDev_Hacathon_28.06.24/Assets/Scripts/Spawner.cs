@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject fishPrefab;
-    public int maxFish = 25;
+    public GameObject splashPrefab;
     public float distance = 3;
     public float timeSpawn = 2f;
     public float x = 0f;
@@ -28,13 +28,10 @@ public class Spawner : MonoBehaviour
             if (timeSpawn <= 0)
             {
                  timeSpawn = ran.Next(3,5);
-                if (transform.childCount < maxFish)
-                {
-                    x = ran.Next(5,14) * (ran.Next(0, 2) == 0 ? -1 : 1);
-                    //z = ran.Next(34,36);
-                    pos = new Vector3(x, y, z);
-                    Instantiate(fishPrefab, pos, Quaternion.Euler(90,0,0));
-                }
+                x = ran.Next(5,14) * (ran.Next(0, 2) == 0 ? -1 : 1);
+                pos = new Vector3(x, y, z);
+                Instantiate(fishPrefab, pos, Quaternion.Euler(90,0,0));
+                Instantiate(splashPrefab, pos, Quaternion.Euler(90,0,0));
             }
         }
     }

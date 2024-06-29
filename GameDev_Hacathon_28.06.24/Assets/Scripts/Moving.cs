@@ -7,7 +7,7 @@ public class Moving : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float start_fish_x;
     private int jump_plan = 0;
-    public bool StopMoving = false;
+    public bool StopMoving = false; 
     System.Random ran = new System.Random();
     void Start()
     {
