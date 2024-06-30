@@ -13,8 +13,8 @@ public class MenuController : MonoBehaviour
 
 
     public Animator animator;
- 
-    public int number;
+
+    int number;
     void Start()
     {
         
@@ -29,7 +29,7 @@ public class MenuController : MonoBehaviour
 
         number = scene_number;
         // Воспроизводим анимацию
-        animator.Play("Base Layer.Entry");
+        animator.Play("Название_анимации");
             
         // Загружаем следующую сцену после завершения анимации
         Invoke("LoadNextScene", animator.GetCurrentAnimatorStateInfo(0).length);

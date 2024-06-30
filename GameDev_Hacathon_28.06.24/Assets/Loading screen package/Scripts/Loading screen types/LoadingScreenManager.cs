@@ -9,6 +9,7 @@ public class LoadingScreenManager : MonoBehaviour
         _animatorComponent = transform.GetComponent<Animator>();  
 
         // Remove it if you don't want to hide it in the Start function and call it elsewhere
+        HideLoadingScreen();
     }
 
     public void RevealLoadingScreen()
@@ -25,7 +26,7 @@ public class LoadingScreenManager : MonoBehaviour
     public void OnFinishedReveal()
     {
         // TODO: remove it and load your own scene !!
-        HideLoadingScreen();
+        transform.parent.GetComponent<DemoSceneManager>().OnLoadingScreenRevealed();
     }
 
     public void OnFinishedHide()
