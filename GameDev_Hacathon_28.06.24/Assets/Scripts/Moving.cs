@@ -17,6 +17,7 @@ public class Moving : MonoBehaviour
         {"Осётр", 2}
     };
     [SerializeField] private Rigidbody rb;
+    private RibakAnim ranim;
     private int jump_plan = 0;
     public float start_fish_x;
     public float start_fish_z;
@@ -26,7 +27,8 @@ public class Moving : MonoBehaviour
     System.Random ran = new System.Random();
     void Start()
     {
-        FishType = Fishes[ran.Next(0, 14)];
+        FishType = FishesI[ran.Next(0, 6)];
+        //ranim = GameObject.FindGameObjectWithTag("RodAnim").GetComponent<RibakAnim>();
     }
 
     // Update is called once per frame
@@ -94,11 +96,13 @@ public class Moving : MonoBehaviour
                         if (Input.mousePosition.x > 281)
                         {
                             //transform.Translate(new Vector3(ran.Next(1, 3), 0, ran.Next(-3, -1)));
+                            //ranim.RodAnim(2);
                             rb.AddForce(new Vector3(ran.Next(300, 350), 0, -10));
                         }
                         else
                         {
                             //transform.Translate(new Vector3(ran.Next(-3, -1), 0, ran.Next(-3, -1)));
+                            //ranim.RodAnim(1);
                             rb.AddForce(new Vector3(ran.Next(-350, -300), 0, -10));
                         }
                     }
