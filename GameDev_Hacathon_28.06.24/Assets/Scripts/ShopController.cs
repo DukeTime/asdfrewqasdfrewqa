@@ -37,7 +37,7 @@ public class ShopController : MonoBehaviour
             myText.text = mon.ToString() + "k";
         }
     }
-    public void ButtonClick(int lvl, string type)
+    public void ButtonClick1(int lvl, string type)
     {
         money = PlayerPrefs.GetInt("money");
         if (money >= 100){
