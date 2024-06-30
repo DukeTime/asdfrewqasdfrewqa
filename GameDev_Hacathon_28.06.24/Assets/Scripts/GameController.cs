@@ -83,6 +83,8 @@
                 if (fish.transform.position.z - moving_script.start_fish_z < -24)
                 {
                     fish.SetActive(false);
+                    fish.transform.position = new Vector3(fish.transform.position.x, fish.transform.position.y, fish.transform.position.z+5);
+                    moving_script.IsSucces = true;
                     EndFishing(moving_script.FishType);
                 }
                 if (fish.transform.position.x - moving_script.start_fish_x > 11)

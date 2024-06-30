@@ -20,6 +20,8 @@ public class Moving : MonoBehaviour
     public float start_fish_x;
     public float start_fish_z;
     public bool StopMoving = false; 
+
+    public bool IsSucces = false;
     System.Random ran = new System.Random();
     void Start()
     {
@@ -40,10 +42,12 @@ public class Moving : MonoBehaviour
     }
     public IEnumerator FishDodjing(Vector3 fish_pos)
     {
+        
         start_fish_x = transform.position.x;
         start_fish_z = transform.position.z;
-        while (transform.position.z > -20)
+        while (!IsSucces)
         {
+        
             float timer = 0;
             rb.velocity = Vector3.zero;
             while (jump_plan == 0)
