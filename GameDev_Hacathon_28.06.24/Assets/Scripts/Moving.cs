@@ -59,7 +59,7 @@ public class Moving : MonoBehaviour
             jump_plan += jump_plan > 0 ? -1 : 1;
             while (timer < 1)
             {
-                transform.position += new Vector3(0, 0, -0.065f);
+                transform.position += new Vector3(0, 0, -0.045f);
                 if (transform.position.x - start_fish_x > 12)
                 {
                     rb.velocity = new Vector3(rb.velocity.x > 0 ? 0 : rb.velocity.x, rb.velocity.y, rb.velocity.z);

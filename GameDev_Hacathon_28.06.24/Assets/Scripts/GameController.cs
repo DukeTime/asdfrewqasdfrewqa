@@ -118,8 +118,13 @@
         }
         private void FisherDamage()
         {
-            rod_hp -= 0.5f;
-            hp_bar.transform.localScale = hp_bar.transform.localScale + new Vector3(-1, 0, 0);
+            rod_hp -= 1.5f;
+            if (rod_hp < 0)
+            {
+                moving_script.IsSucces = true;
+                EndFishing(null);
+            }
+
         }
 
         private void ShipStop()
@@ -174,23 +179,34 @@
         }
         private void EndFishing(string fish_type)
         {
-            string fish = fish_type;
-            int is_already_catched = PlayerPrefs.GetInt(fish);
+            if (fish_type != null)
+            {
+                string fish = fish_type;
+                int is_already_catched = PlayerPrefs.GetInt(fish);
 
-            if (is_already_catched == 0){    // если новая
-                PlayerPrefs.SetInt(fish, 1);
-                Debug.Log("new ");
-                image3.sprite = neww;
-            }
-            else{
-                Debug.Log("not new");
-                image3.sprite = not_new;
+                if (is_already_catched == 0){    // если новая
+                    PlayerPrefs.SetInt(fish, 1);
+                    Debug.Log("new ");
+                    image3.sprite = neww;
+                }
+                else{
+                    Debug.Log("not new");
+                    image3.sprite = not_new;
                 
+                }
+                int money = PlayerPrefs.GetInt("money");
+                money = money + 10;
+                PlayerPrefs.SetInt("money", money);
             }
-            int money = PlayerPrefs.GetInt("money");
-            money = money + 10;
-            PlayerPrefs.SetInt("money", money);
 
+            if (fish_type == null)
+            {
+                image3.color = new Color(0,0,0,0);
+                title_image.color = new Color(0, 0, 0, 0);
+                fish_image.color = new Color(0, 0, 0, 0);
+                succes_animation.SetBool("PlayLoseAnim", true);
+                return;
+            }
             if (fish_type == "Щука"){
                 title_image.sprite = Щука;
                 fish_image.sprite = Щука_надпись;
