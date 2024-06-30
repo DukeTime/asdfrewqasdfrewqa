@@ -9,8 +9,12 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject button1;
     [SerializeField] private GameObject button2;
 
-    public Animator loadingAnimator;
 
+
+
+    public Animator animator;
+
+    int number;
     void Start()
     {
         
@@ -22,7 +26,18 @@ public class MenuController : MonoBehaviour
     }
     public void ButtonClick(int scene_number)
     {
-        loadingAnimator.Play("LoadingAnimation");
-        SceneManager.LoadScene(scene_number);
+
+        number = scene_number;
+        // Воспроизводим анимацию
+        animator.Play("Название_анимации");
+            
+        // Загружаем следующую сцену после завершения анимации
+        Invoke("LoadNextScene", animator.GetCurrentAnimatorStateInfo(0).length);
+
+
     }
+        private void LoadNextScene()
+        {
+            SceneManager.LoadScene(number);
+        }
 }
