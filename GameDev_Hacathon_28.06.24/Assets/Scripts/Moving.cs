@@ -5,6 +5,7 @@ using System.Threading;
 
 public class Moving : MonoBehaviour
 {
+    public bool MobilePlatform = false;
     public string FishType;
     private string[] FishesI = { "Щука", "Осётр", "Горбуша", "Карп", "Судак", "Толстолобик" };
     private string[] FishesII = { "Сом", "Угорь", "Пиранья"};
@@ -69,17 +70,37 @@ public class Moving : MonoBehaviour
                     rb.velocity = new Vector3(rb.velocity.x > 0 ? rb.velocity.x : 0, rb.velocity.y, rb.velocity.z);
                     rb.isKinematic = false;
                 }
-                if (Input.GetMouseButtonDown(0))
+                if (MobilePlatform)
                 {
-                    if (Input.mousePosition.x > 562.5)
+                    if (Input.touchCount != 0)
                     {
-                        //transform.Translate(new Vector3(ran.Next(1, 3), 0, ran.Next(-3, -1)));
-                        rb.AddForce(new Vector3(ran.Next(300, 350), 0, -10));
+                        if (Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position).x > 562.5)
+                        {
+                            //transform.Translate(new Vector3(ran.Next(1, 3), 0, ran.Next(-3, -1)));
+                            rb.AddForce(new Vector3(ran.Next(300, 350), 0, -10));
+                        }
+                        else
+                        {
+                            //transform.Translate(new Vector3(ran.Next(-3, -1), 0, ran.Next(-3, -1)));
+                            rb.AddForce(new Vector3(ran.Next(-350, -300), 0, -10));
+                        }
                     }
-                    else
+
+                }
+                else
+                {
+                    if (Input.GetMouseButtonDown(0))
                     {
-                        //transform.Translate(new Vector3(ran.Next(-3, -1), 0, ran.Next(-3, -1)));
-                        rb.AddForce(new Vector3(ran.Next(-350, -300), 0, -10));
+                        if (Input.mousePosition.x > 562.5)
+                        {
+                            //transform.Translate(new Vector3(ran.Next(1, 3), 0, ran.Next(-3, -1)));
+                            rb.AddForce(new Vector3(ran.Next(300, 350), 0, -10));
+                        }
+                        else
+                        {
+                            //transform.Translate(new Vector3(ran.Next(-3, -1), 0, ran.Next(-3, -1)));
+                            rb.AddForce(new Vector3(ran.Next(-350, -300), 0, -10));
+                        }
                     }
                 }
                 //transform.position = Vector3.MoveTowards(transform.position, point, Time.deltaTime * 15);

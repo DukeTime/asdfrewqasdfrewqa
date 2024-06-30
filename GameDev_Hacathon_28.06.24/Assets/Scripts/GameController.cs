@@ -9,6 +9,7 @@
     public class GameController : MonoBehaviour
     {
         //[SerializeField] private WaterPropertyBlockSetter water;
+        public bool MobilePlatform = false;
         public int game_phase = 0;
         public float max_rod_hp = 100;
         public float rod_hp;
@@ -71,10 +72,21 @@
         {
             if (game_phase == 0)
             {
-                if (Input.GetMouseButtonDown(0))
+                if (MobilePlatform)
                 {
-                    ShipStop();
-                    game_phase = 1;
+                    if (Input.touchCount != 0)
+                    {
+                        ShipStop();
+                        game_phase = 1;
+                    }
+                }
+                else
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        ShipStop();
+                        game_phase = 1;
+                    }
                 }
             }
             else
