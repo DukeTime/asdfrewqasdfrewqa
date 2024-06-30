@@ -8,7 +8,7 @@ public class LoadingScreen : MonoBehaviour
     [SerializeField] private Animator loadingAnim;
     void Start()
     {
-        
+        //loadingAnim.SetTrigger("Hide");
     }
 
     // Update is called once per frame
@@ -23,18 +23,19 @@ public class LoadingScreen : MonoBehaviour
         StartCoroutine(LoadingScene(scene_num));
     }
 
-    private IEnumerator LoadingScene(int scene_num)
+    IEnumerator LoadingScene(int scene_num)
     {
         AsyncOperation loadAcync = SceneManager.LoadSceneAsync(scene_num);
-        loadAcync.allowSceneActivation = false;
+        //loadAcync.allowSceneActivation = false;
 
         while (!loadAcync.isDone)
         {
-            if (loadAcync.progress > 0.9f && !loadAcync.allowSceneActivation)
-            {
-                yield return new WaitForSeconds(2.2f);
-                loadAcync.allowSceneActivation = true;
-            }
+            //if (loadAcync.progress > 0.9f && !loadAcync.allowSceneActivation)
+            //{
+            //    Debug.Log("1 sec");
+            //    yield return new WaitForSeconds(1f);
+            //    loadAcync.allowSceneActivation = true;
+            //}
             yield return null;
         }
     }
