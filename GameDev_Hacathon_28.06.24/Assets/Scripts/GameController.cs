@@ -84,7 +84,6 @@
                     if (Input.touchCount != 0)
                     {
                         ShipStop();
-                        game_phase = 1;
                     }
                 }
                 else
@@ -92,7 +91,6 @@
                     if (Input.GetMouseButtonDown(0))
                     {
                         ShipStop();
-                        game_phase = 1;
                     }
                 }
             }
@@ -126,15 +124,22 @@
 
         private void ShipStop()
         {
-            boat_animator.SetBool("going", false);
             fish = GameObject.FindGameObjectWithTag("Fish");
-            moving_script = fish.GetComponent<Moving>();
+            if (fish != null)
+            {
+                if (fish.transform.position.z > -7 && fish.transform.position.z < 27)
+                {
+                    game_phase = 1;
+                    boat_animator.SetBool("going", false);
+                    moving_script = fish.GetComponent<Moving>();
 
-            moving_script.StopMoving = true;
-            spawner_script.StopSpawning = true;
+                    moving_script.StopMoving = true;
+                    spawner_script.StopSpawning = true;
 
-            StartCoroutine(CameraMoving(fish.transform.position));
-            //StartCoroutine(CameraMoving(fish_pos));
+                    StartCoroutine(CameraMoving(fish.transform.position));
+                    //StartCoroutine(CameraMoving(fish_pos));
+                }
+            }
         }
 
         private IEnumerator CameraMoving(Vector3 fish_position)
