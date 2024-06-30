@@ -1200,8 +1200,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 341, y: 736.7}
-  m_SizeDelta: {x: 384.4068, y: 833.8491}
+  m_AnchoredPosition: {x: 280.98, y: 608}
+  m_SizeDelta: {x: 488.82452, y: 1057.7478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1181336552
 GameObject:
@@ -1518,6 +1518,7 @@ MonoBehaviour:
   button1: {fileID: 259958098}
   button2: {fileID: 363425610}
   animator: {fileID: 1011232208}
+  a: 0
 --- !u!4 &1461097795
 Transform:
   m_ObjectHideFlags: 0
