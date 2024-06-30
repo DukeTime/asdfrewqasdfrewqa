@@ -641,8 +641,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1461097794}
-        m_MethodName: ButtonClick
+      - m_Target: {fileID: 1011232209}
+        m_MethodName: SceneChange
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -875,8 +875,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1461097794}
-        m_MethodName: ButtonClick
+      - m_Target: {fileID: 1011232209}
+        m_MethodName: SceneChange
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
