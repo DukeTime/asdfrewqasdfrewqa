@@ -13,7 +13,7 @@ public class MenuController : MonoBehaviour
 
 
     public Animator animator;
-
+    public int a;
     int number;
     void Start()
     {
@@ -36,8 +36,8 @@ public class MenuController : MonoBehaviour
 
 
     }
-        private void LoadNextScene()
-        {
-            SceneManager.LoadScene(number);
-        }
+    private void LoadNextScene(int scnumber)
+    {
+        SceneManager.LoadScene(scnumber);
+    }
 }
