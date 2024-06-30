@@ -9,6 +9,7 @@
     public class GameController : MonoBehaviour
     {
         //[SerializeField] private WaterPropertyBlockSetter water;
+        public bool MobilePlatform = false;
         public int game_phase = 0;
         public float max_rod_hp = 100;
         public float rod_hp;
@@ -28,6 +29,13 @@
         [SerializeField] public Image title_image;
 
         [SerializeField] public Image fish_image;
+
+        [SerializeField] public Sprite neww;
+
+        [SerializeField] public Sprite not_new;
+
+        [SerializeField] public Image image3;
+
     
         [SerializeField] public Sprite Щука;
         [SerializeField] public Sprite Карп;
@@ -71,10 +79,19 @@
         {
             if (game_phase == 0)
             {
-                if (Input.GetMouseButtonDown(0))
+                if (MobilePlatform)
                 {
-                    ShipStop();
-                    game_phase = 1;
+                    if (Input.touchCount != 0)
+                    {
+                        ShipStop();
+                    }
+                }
+                else
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        ShipStop();
+                    }
                 }
             }
             else
@@ -83,6 +100,8 @@
                 if (fish.transform.position.z - moving_script.start_fish_z < -24)
                 {
                     fish.SetActive(false);
+                    fish.transform.position = new Vector3(fish.transform.position.x, fish.transform.position.y, fish.transform.position.z+5);
+                    moving_script.IsSucces = true;
                     EndFishing(moving_script.FishType);
                 }
                 if (fish.transform.position.x - moving_script.start_fish_x > 11)
@@ -105,15 +124,22 @@
 
         private void ShipStop()
         {
-            boat_animator.SetBool("going", false);
             fish = GameObject.FindGameObjectWithTag("Fish");
-            moving_script = fish.GetComponent<Moving>();
+            if (fish != null)
+            {
+                if (fish.transform.position.z > -7 && fish.transform.position.z < 27)
+                {
+                    game_phase = 1;
+                    boat_animator.SetBool("going", false);
+                    moving_script = fish.GetComponent<Moving>();
 
-            moving_script.StopMoving = true;
-            spawner_script.StopSpawning = true;
+                    moving_script.StopMoving = true;
+                    spawner_script.StopSpawning = true;
 
-            StartCoroutine(CameraMoving(fish.transform.position));
-            //StartCoroutine(CameraMoving(fish_pos));
+                    StartCoroutine(CameraMoving(fish.transform.position));
+                    //StartCoroutine(CameraMoving(fish_pos));
+                }
+            }
         }
 
         private IEnumerator CameraMoving(Vector3 fish_position)
@@ -154,9 +180,11 @@
             if (is_already_catched == 0){    // если новая
                 PlayerPrefs.SetInt(fish, 1);
                 Debug.Log("new ");
+                image3.sprite = neww;
             }
             else{
                 Debug.Log("not new");
+                image3.sprite = not_new;
                 
             }
             int money = PlayerPrefs.GetInt("money");
