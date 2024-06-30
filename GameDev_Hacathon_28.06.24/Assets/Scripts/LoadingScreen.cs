@@ -23,17 +23,18 @@ public class LoadingScreen : MonoBehaviour
         StartCoroutine(LoadingScene(scene_num));
     }
 
-    private IEnumerator LoadingScene(int scene_num)
+    IEnumerator LoadingScene(int scene_num)
     {
         AsyncOperation loadAcync = SceneManager.LoadSceneAsync(scene_num);
-        loadAcync.allowSceneActivation = true;
+        //loadAcync.allowSceneActivation = false;
 
         while (!loadAcync.isDone)
         {
             //if (loadAcync.progress > 0.9f && !loadAcync.allowSceneActivation)
             //{
-                //yield return new WaitForSeconds(2.2f);
-                //loadAcync.allowSceneActivation = true;
+            //    Debug.Log("1 sec");
+            //    yield return new WaitForSeconds(1f);
+            //    loadAcync.allowSceneActivation = true;
             //}
             yield return null;
         }
