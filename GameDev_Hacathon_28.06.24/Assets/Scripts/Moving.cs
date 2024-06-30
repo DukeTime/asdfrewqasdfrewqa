@@ -8,6 +8,8 @@ public class Moving : MonoBehaviour
     public string FishType;
     private string[] FishesI = { "Щука", "Осётр", "Горбуша", "Карп", "Судак", "Толстолобик" };
     private string[] FishesII = { "Сом", "Угорь", "Пиранья"};
+
+    private string[] Fishes = { "Щука", "Осётр", "Горбуша", "Карп", "Судак", "Толстолобик","Голавль","Акула","Арапаима","Скат","Краб","Пиранья","Сом","Угорь"};
     [SerializeField] private Dictionary<string, int> typeDict = new Dictionary<string, int>()
     {
         {"Щука", 2},
@@ -21,7 +23,7 @@ public class Moving : MonoBehaviour
     System.Random ran = new System.Random();
     void Start()
     {
-        FishType = FishesI[ran.Next(0, 6)];
+        FishType = Fishes[ran.Next(0, 15)];
     }
 
     // Update is called once per frame
