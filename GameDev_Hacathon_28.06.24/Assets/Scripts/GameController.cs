@@ -28,6 +28,13 @@
         [SerializeField] public Image title_image;
 
         [SerializeField] public Image fish_image;
+
+        [SerializeField] public Sprite neww;
+
+        [SerializeField] public Sprite not_new;
+
+        [SerializeField] public Image image3;
+
     
         [SerializeField] public Sprite Щука;
         [SerializeField] public Sprite Карп;
@@ -156,9 +163,11 @@
             if (is_already_catched == 0){    // если новая
                 PlayerPrefs.SetInt(fish, 1);
                 Debug.Log("new ");
+                image3.sprite = neww;
             }
             else{
                 Debug.Log("not new");
+                image3.sprite = not_new;
                 
             }
             int money = PlayerPrefs.GetInt("money");
