@@ -8,10 +8,12 @@ public class ShopController : MonoBehaviour
     
 
 
-    public int money;
+    private int money;
     public double mon;
     
     [SerializeField] public GameObject myObject;
+
+    [SerializeField] public GameObject button;
 
     Text myText;
 
@@ -34,5 +36,16 @@ public class ShopController : MonoBehaviour
             float mon = money/1000;
             myText.text = mon.ToString() + "k";
         }
+    }
+    public void ButtonClick(int lvl, string type)
+    {
+        money = PlayerPrefs.GetInt("money");
+        if (money >= 100){
+            
+            PlayerPrefs.SetInt(type, lvl);
+            money = money - 100;
+            PlayerPrefs.SetInt("money",money);
+        }
+        
     }
 }
