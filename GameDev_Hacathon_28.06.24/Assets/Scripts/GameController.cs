@@ -114,6 +114,11 @@
                     gradient1.color = new Color(255, 255, 255, 255);
                     FisherDamage();
                 }
+                else
+                {
+                    gradient1.color = new Color(255, 255, 255, 0);
+                    gradient2.color = new Color(255, 255, 255, 0);
+                }
             }
         }
         private void FisherDamage()
