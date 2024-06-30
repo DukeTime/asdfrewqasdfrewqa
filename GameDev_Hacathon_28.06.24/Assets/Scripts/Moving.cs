@@ -74,7 +74,7 @@ public class Moving : MonoBehaviour
                 {
                     if (Input.touchCount != 0)
                     {
-                        if (Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position).x > 562.5)
+                        if (Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position).x > 281)
                         {
                             //transform.Translate(new Vector3(ran.Next(1, 3), 0, ran.Next(-3, -1)));
                             rb.AddForce(new Vector3(ran.Next(300, 350), 0, -10));
@@ -91,7 +91,7 @@ public class Moving : MonoBehaviour
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
-                        if (Input.mousePosition.x > 562.5)
+                        if (Input.mousePosition.x > 281)
                         {
                             //transform.Translate(new Vector3(ran.Next(1, 3), 0, ran.Next(-3, -1)));
                             rb.AddForce(new Vector3(ran.Next(300, 350), 0, -10));
