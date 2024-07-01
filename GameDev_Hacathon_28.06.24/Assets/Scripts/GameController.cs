@@ -24,6 +24,7 @@
         [SerializeField] private RayForRod rfr;
         System.Random ran = new System.Random();
         private Moving moving_script;
+        private AudioSource menu_music;
         private GameObject fish;
 
         [SerializeField] public Image title_image;
@@ -71,6 +72,8 @@
 
         void Start()
         {
+            menu_music = GameObject.FindGameObjectWithTag("Sound").GetComponent<AudioSource>();
+            menu_music.enabled = false;
             rod_hp = max_rod_hp;
             //water = GameObject.FindGameObjectWithTag("Water").GetComponent<WaterPropertyBlockSetter>();
         }
@@ -94,11 +97,12 @@
                     }
                 }
             }
-            else
+            else if (game_phase == 1)
             {
                 StartCoroutine(rfr.RodCor(fish));
                 if (fish.transform.position.z - moving_script.start_fish_z < -24)
                 {
+                    game_phase = 2;
                     fish.SetActive(false);
                     fish.transform.position = new Vector3(fish.transform.position.x, fish.transform.position.y, fish.transform.position.z+5);
                     moving_script.IsSucces = true;
@@ -181,6 +185,7 @@
 
         public void BackTo(int scene_num)
         {
+            menu_music.enabled = true;
             SceneManager.LoadScene(scene_num);
         }
         private void EndFishing(string fish_type)

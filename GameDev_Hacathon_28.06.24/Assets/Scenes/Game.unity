@@ -1310,6 +1310,7 @@ MonoBehaviour:
   rod_pos1: {x: 1.307692, y: 2.816667, z: -5.5}
   rod_pos2: {x: 3.5, y: 1.4, z: -6}
   rod_pos3: {x: -3.5, y: 1.4, z: -6}
+  FishingProgress: 6
 --- !u!1 &1024486866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,7 +1696,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1351380138
 GameObject:
@@ -2519,12 +2520,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837222496}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 246.33055, y: 1082.5441, z: -576.0763}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2004454704
 GameObject:

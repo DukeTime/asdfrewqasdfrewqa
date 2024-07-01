@@ -11,6 +11,7 @@ public class RibakAnim : MonoBehaviour
     [SerializeField] private Vector3 rod_pos1 = new Vector3(1.307692f, 2.816667f, -5.5f);
     [SerializeField] private Vector3 rod_pos2 = new Vector3(-3.5f, 1.4f, -6);
     [SerializeField] private Vector3 rod_pos3 = new Vector3(3.5f, 1.4f, -6);
+    public int FishingProgress = 8;
 
     public void RodAnim(int variant)
     {

@@ -9,6 +9,7 @@ TagManager:
   - Splash
   - Water
   - RodAnim
+  - Sound
   layers:
   - Default
   - TransparentFX

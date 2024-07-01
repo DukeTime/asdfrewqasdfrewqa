@@ -10,14 +10,27 @@ public class Moving : MonoBehaviour
     private string[] FishesI = { "Щука", "Осётр", "Горбуша", "Карп", "Судак", "Толстолобик" };
     private string[] FishesII = { "Сом", "Угорь", "Пиранья"};
 
-    private string[] Fishes = { "Щука", "Осётр", "Горбуша", "Карп", "Судак", "Толстолобик","Голавль","Акула","Арапаима","Скат","Краб","Пиранья","Сом","Угорь"};
+    private string[] Fishes = { "Карп", "Осётр", "Горбуша",  "Щука", "Толстолобик", "Судак", "Голавль", "Сом", "Угорь", "Пиранья", "Арапаима", "Акула", "Скат", "Краб"};
     [SerializeField] private Dictionary<string, int> typeDict = new Dictionary<string, int>()
     {
-        {"Щука", 2},
-        {"Осётр", 2}
+        {"Щука", 3},
+        {"Осётр", 3},
+        {"Горбуша", 2},
+        {"Карп", 2},
+        {"Судак", 3},
+        {"Толстолобик", 3},
+        {"Голавль", 4},
+        {"Пиранья", 1},
+        {"Сом", 5},
+        {"Угорь", 5},
+        {"Акула", 7},
+        {"Арапаима", 5},
+        {"Скат", 6},
+        {"Краб", 1}
     };
     [SerializeField] private Rigidbody rb;
     private RibakAnim ranim;
+    private int strenght;
     private int jump_plan = 0;
     public float start_fish_x;
     public float start_fish_z;
@@ -27,8 +40,14 @@ public class Moving : MonoBehaviour
     System.Random ran = new System.Random();
     void Start()
     {
-        FishType = FishesI[ran.Next(0, 6)];
         ranim = GameObject.FindGameObjectWithTag("RodAnim").GetComponent<RibakAnim>();
+        if (ranim.FishingProgress < 14)
+        {
+            ranim.FishingProgress += 1;
+        }
+        FishType = Fishes[ran.Next(0, ranim.FishingProgress)];
+        strenght = typeDict[FishType];
+        transform.localScale = Vector3.one * 0.1f * strenght;
     }
 
     // Update is called once per frame
@@ -57,7 +76,7 @@ public class Moving : MonoBehaviour
                 jump_plan = ran.Next(-3, 3);
             //Vector3 point = fish_pos + new Vector3(ran.Next(-14, 14), 0, ran.Next(-5, 12));
             transform.rotation = Quaternion.Euler(0, jump_plan > 0 ? 90 : -90, 0);
-            rb.AddForce(jump_plan > 0 ? Vector3.right * 400f : Vector3.left * 400f);
+            rb.AddForce(jump_plan > 0 ? Vector3.right * (100f * strenght + 200f) : Vector3.left * (100f * strenght + 200f));
             jump_plan += jump_plan > 0 ? -1 : 1;
             ranim.RodAnim(0);
             while (timer < 1)
