@@ -121,7 +121,7 @@ public class Moving : MonoBehaviour
                         }
                         else
                         {
-                            //transform.Translate(new Vector3(ran.Next(-3, -1), 0, ran.Next(-3, -1)));
+                            //transform.Translate(new Vector3(ran.Next(-3, -1), 0, ran.Next(-3, -1)));\
                             ranim.RodAnim(2);
                             rb.AddForce(new Vector3(ran.Next(-350, -300), 0, -10));
                         }
