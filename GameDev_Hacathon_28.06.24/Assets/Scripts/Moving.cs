@@ -76,7 +76,7 @@ public class Moving : MonoBehaviour
                 jump_plan = ran.Next(-3, 3);
             //Vector3 point = fish_pos + new Vector3(ran.Next(-14, 14), 0, ran.Next(-5, 12));
             transform.rotation = Quaternion.Euler(0, jump_plan > 0 ? 90 : -90, 0);
-            rb.AddForce(jump_plan > 0 ? Vector3.right * (100f * strenght + 200f) : Vector3.left * (100f * strenght + 200f));
+            rb.AddForce(jump_plan > 0 ? Vector3.right * (130f * strenght + 200f) : Vector3.left * (130f * strenght + 200f));
             jump_plan += jump_plan > 0 ? -1 : 1;
             ranim.RodAnim(0);
             while (timer < 1)
@@ -96,7 +96,7 @@ public class Moving : MonoBehaviour
                 {
                     if (Input.touchCount != 0)
                     {
-                        if (Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position).x > 281)
+                        if (Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position).x > 540)
                         {
                             //transform.Translate(new Vector3(ran.Next(1, 3), 0, ran.Next(-3, -1)));
                             rb.AddForce(new Vector3(ran.Next(300, 350), 0, -10));
@@ -113,7 +113,7 @@ public class Moving : MonoBehaviour
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
-                        if (Input.mousePosition.x > 281)
+                        if (Input.mousePosition.x > 540)
                         {
                             //transform.Translate(new Vector3(ran.Next(1, 3), 0, ran.Next(-3, -1)));
                             ranim.RodAnim(1);
