@@ -161,6 +161,7 @@
                 timer += Time.deltaTime;
                 yield return null;
             }
+            rfr.Disapear(true);
             boat.transform.position = fish_position + new Vector3(0, 10.3f, -25);
             timer = 0;
             while (timer < 1.5)
@@ -184,6 +185,7 @@
         }
         private void EndFishing(string fish_type)
         {
+            rfr.Disapear(false);
             if (fish_type != null)
             {
                 string fish = fish_type;
@@ -191,11 +193,9 @@
 
                 if (is_already_catched == 0){    // если новая
                     PlayerPrefs.SetInt(fish, 1);
-                    Debug.Log("new ");
                     image3.sprite = neww;
                 }
                 else{
-                    Debug.Log("not new");
                     image3.sprite = not_new;
                 
                 }

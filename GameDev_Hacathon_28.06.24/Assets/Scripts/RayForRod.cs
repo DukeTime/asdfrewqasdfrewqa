@@ -11,15 +11,13 @@ public class RayForRod : MonoBehaviour
         rffr.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Disapear(bool cancel)
     {
-
+        rffr.SetActive(cancel);
     }
     public IEnumerator RodCor(GameObject fish)
     {
         yield return new WaitForSeconds(1.5f);
-        rffr.SetActive(true);
         while (true)
         {
             transform.LookAt(fish.transform.position);
