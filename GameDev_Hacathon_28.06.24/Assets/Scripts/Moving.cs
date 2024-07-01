@@ -28,7 +28,7 @@ public class Moving : MonoBehaviour
     void Start()
     {
         FishType = FishesI[ran.Next(0, 6)];
-        //ranim = GameObject.FindGameObjectWithTag("RodAnim").GetComponent<RibakAnim>();
+        ranim = GameObject.FindGameObjectWithTag("RodAnim").GetComponent<RibakAnim>();
     }
 
     // Update is called once per frame
@@ -59,6 +59,7 @@ public class Moving : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, jump_plan > 0 ? 90 : -90, 0);
             rb.AddForce(jump_plan > 0 ? Vector3.right * 400f : Vector3.left * 400f);
             jump_plan += jump_plan > 0 ? -1 : 1;
+            ranim.RodAnim(0);
             while (timer < 1)
             {
                 transform.position += new Vector3(0, 0, -0.045f);
@@ -96,13 +97,13 @@ public class Moving : MonoBehaviour
                         if (Input.mousePosition.x > 281)
                         {
                             //transform.Translate(new Vector3(ran.Next(1, 3), 0, ran.Next(-3, -1)));
-                            //ranim.RodAnim(2);
+                            ranim.RodAnim(1);
                             rb.AddForce(new Vector3(ran.Next(300, 350), 0, -10));
                         }
                         else
                         {
                             //transform.Translate(new Vector3(ran.Next(-3, -1), 0, ran.Next(-3, -1)));
-                            //ranim.RodAnim(1);
+                            ranim.RodAnim(2);
                             rb.AddForce(new Vector3(ran.Next(-350, -300), 0, -10));
                         }
                     }

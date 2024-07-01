@@ -497,7 +497,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8f6c7559c083b0c459a3926d2d41dd2e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f6c7559c083b0c459a3926d2d41dd2e,
         type: 3}
@@ -574,6 +574,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6142138867974274370, guid: 8f6c7559c083b0c459a3926d2d41dd2e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f6c7559c083b0c459a3926d2d41dd2e, type: 3}
 --- !u!1 &298626269
@@ -588,7 +593,7 @@ GameObject:
   - component: {fileID: 298626270}
   m_Layer: 0
   m_Name: rod
-  m_TagString: Untagged
+  m_TagString: RodAnim
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -614,12 +619,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298626269}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.307692, y: 2.816667, z: -5.5}
+  m_LocalPosition: {x: 1.307692, y: 2.8166676, z: -5.5}
   m_LocalScale: {x: 0.7692308, y: 0.8333333, z: 0.8333333}
   m_Children:
   - {fileID: 635354715}
   m_Father: {fileID: 1426517281}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &341668851 stripped
 Transform:
@@ -1709,9 +1714,10 @@ GameObject:
   m_Component:
   - component: {fileID: 985781406}
   - component: {fileID: 985781407}
+  - component: {fileID: 985781408}
   m_Layer: 0
   m_Name: Spawner
-  m_TagString: Untagged
+  m_TagString: RodAnim
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1750,6 +1756,25 @@ MonoBehaviour:
   y: -0.3
   z: 38
   StopSpawning: 0
+--- !u!114 &985781408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985781405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7098eb627404557428a9c1ac7bf6914f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: 1622462953}
+  right: {fileID: 1477466521}
+  left: {fileID: 2100712308}
+  rod: {fileID: 298626269}
+  rod_pos1: {x: 1.307692, y: 2.816667, z: -5.5}
+  rod_pos2: {x: 3.5, y: 1.4, z: -6}
+  rod_pos3: {x: -3.5, y: 1.4, z: -6}
 --- !u!1 &1024486866
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,7 +2255,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1426517281}
   - component: {fileID: 1426517282}
-  - component: {fileID: 1426517283}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -2252,9 +2276,9 @@ Transform:
   - {fileID: 497937119}
   - {fileID: 341668851}
   - {fileID: 690566167}
-  - {fileID: 298626271}
   - {fileID: 2100712309}
   - {fileID: 1477466522}
+  - {fileID: 298626271}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2277,22 +2301,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1426517283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426517280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7098eb627404557428a9c1ac7bf6914f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idle: {fileID: 1622462953}
-  right: {fileID: 2100712308}
-  left: {fileID: 1477466521}
-  rod: {fileID: 298626269}
 --- !u!1 &1477466521 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f6c7559c083b0c459a3926d2d41dd2e,
@@ -2339,8 +2347,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 344.21, y: 1018.6}
-  m_SizeDelta: {x: 363.14813, y: 320.53906}
+  m_AnchoredPosition: {x: 195.60004, y: 518}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1484611794
 MonoBehaviour:
@@ -2363,7 +2371,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2772,7 +2780,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8f6c7559c083b0c459a3926d2d41dd2e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f6c7559c083b0c459a3926d2d41dd2e,
         type: 3}
@@ -2845,6 +2853,11 @@ PrefabInstance:
       value: RIBAK_RRR2 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8f6c7559c083b0c459a3926d2d41dd2e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142138867974274370, guid: 8f6c7559c083b0c459a3926d2d41dd2e,
         type: 3}
       propertyPath: m_IsActive
       value: 0
