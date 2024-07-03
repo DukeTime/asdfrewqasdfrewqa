@@ -642,6 +642,7 @@ GameObject:
   - component: {fileID: 259164783}
   - component: {fileID: 259164782}
   - component: {fileID: 259164781}
+  - component: {fileID: 259164784}
   m_Layer: 5
   m_Name: rod1
   m_TagString: Untagged
@@ -710,7 +711,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 259164782}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 259164784}
+        m_MethodName: BuyItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &259164782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,6 +760,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259164779}
   m_CullTransparentMesh: 0
+--- !u!114 &259164784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259164779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfd5edefa282974b9a77e81f4ec4381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myObject: {fileID: 0}
 --- !u!1 &281162189
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,6 +877,7 @@ GameObject:
   - component: {fileID: 284197738}
   - component: {fileID: 284197737}
   - component: {fileID: 284197736}
+  - component: {fileID: 284197739}
   m_Layer: 5
   m_Name: rod3
   m_TagString: Untagged
@@ -920,7 +946,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 284197737}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 284197739}
+        m_MethodName: BuyItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &284197737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -958,6 +995,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284197734}
   m_CullTransparentMesh: 0
+--- !u!114 &284197739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284197734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfd5edefa282974b9a77e81f4ec4381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myObject: {fileID: 0}
 --- !u!1 &287882322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,7 +1247,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.4}
   m_AnchorMin: {x: 0.13962959, y: 0.83262295}
   m_AnchorMax: {x: 0.33077776, y: 0.9091578}
-  m_AnchoredPosition: {x: -3.9974365, y: 121.76636}
+  m_AnchoredPosition: {x: -3.9974365, y: 121.7666}
   m_SizeDelta: {x: 3.0733948, y: -74.47418}
   m_Pivot: {x: 0.50000006, y: 0.5000002}
 --- !u!114 &533441757
@@ -2015,6 +2065,7 @@ GameObject:
   - component: {fileID: 1725122135}
   - component: {fileID: 1725122134}
   - component: {fileID: 1725122133}
+  - component: {fileID: 1725122136}
   m_Layer: 5
   m_Name: rod2
   m_TagString: Untagged
@@ -2083,7 +2134,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1725122134}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1725122136}
+        m_MethodName: BuyItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1725122134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2121,6 +2183,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725122131}
   m_CullTransparentMesh: 0
+--- !u!114 &1725122136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725122131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfd5edefa282974b9a77e81f4ec4381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myObject: {fileID: 0}
 --- !u!1 &1846893943
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,6 +2396,7 @@ GameObject:
   - component: {fileID: 1937684776}
   - component: {fileID: 1937684775}
   - component: {fileID: 1937684774}
+  - component: {fileID: 1937684777}
   m_Layer: 5
   m_Name: rod4
   m_TagString: Untagged
@@ -2389,7 +2465,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1937684775}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1937684777}
+        m_MethodName: BuyItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1937684775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2427,6 +2514,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937684772}
   m_CullTransparentMesh: 0
+--- !u!114 &1937684777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937684772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfd5edefa282974b9a77e81f4ec4381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myObject: {fileID: 0}
 --- !u!1 &1972066778
 GameObject:
   m_ObjectHideFlags: 0
