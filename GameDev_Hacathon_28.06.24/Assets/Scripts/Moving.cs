@@ -11,7 +11,7 @@ public class Moving : MonoBehaviour
     private string[] FishesII = { "Сом", "Угорь", "Пиранья"};
 
     private string[] Fishes = { "Карп", "Осётр", "Горбуша",  "Щука", "Толстолобик", "Судак", "Голавль", "Сом", "Угорь", "Пиранья", "Арапаима", "Акула", "Скат", "Краб"};
-    [SerializeField] private Dictionary<string, int> typeDict = new Dictionary<string, int>()
+    [SerializeField] private Dictionary<string, int> strenghtDict = new Dictionary<string, int>()
     {
         {"Щука", 3},
         {"Осётр", 3},
@@ -27,6 +27,24 @@ public class Moving : MonoBehaviour
         {"Арапаима", 5},
         {"Скат", 6},
         {"Краб", 1}
+    };
+    [SerializeField]
+    private Dictionary<string, Vector3> sizeDict = new Dictionary<string, Vector3>()
+    {
+        {"Щука", new Vector3(0.3f, 0.3f, 0.3f)},
+        {"Осётр", new Vector3(0.3f, 0.3f, 0.3f)},
+        {"Горбуша", new Vector3(0.2f, 0.4f, 0.2f)},
+        {"Карп", new Vector3(0.2f, 0.4f, 0.2f)},
+        {"Судак", new Vector3(0.3f, 0.3f, 0.3f)},
+        {"Толстолобик", new Vector3(0.3f, 0.3f, 0.3f)},
+        {"Голавль", new Vector3(0.4f, 0.4f, 0.4f)},
+        {"Пиранья", new Vector3(0.1f, 0.2f, 0.2f)},
+        {"Сом", new Vector3(0.5f, 0.5f, 0.5f)},
+        {"Угорь", new Vector3(0.35f, 0.35f, 1.2f)},
+        {"Акула", new Vector3(0.8f, 0.8f, 0.8f)},
+        {"Арапаима", new Vector3(0.6f, 0.6f, 0.6f)},
+        {"Скат", new Vector3(5, 0.1f, 1.2f)},
+        {"Краб", new Vector3(0.1f, 0.1f, 0.1f)}
     };
     [SerializeField] private Rigidbody rb;
     private RibakAnim ranim;
@@ -45,9 +63,9 @@ public class Moving : MonoBehaviour
         {
             ranim.FishingProgress += 1;
         }
-        FishType = Fishes[ran.Next(0, ranim.FishingProgress)];
-        strenght = typeDict[FishType];
-        transform.localScale = Vector3.one * 0.1f * strenght;
+        FishType = Fishes[8];//ran.Next(0, ranim.FishingProgress)];
+        strenght = strenghtDict[FishType];
+        transform.localScale = sizeDict[FishType];
     }
 
     // Update is called once per frame
