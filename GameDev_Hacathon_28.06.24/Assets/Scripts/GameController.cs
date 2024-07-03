@@ -223,7 +223,7 @@
                 title_image.sprite = Щука;
                 fish_image.sprite = Щука_надпись;
             }
-            if (fish_type == "Осетр"){
+            if (fish_type == "Осётр"){
                 title_image.sprite = Осетр;
                 fish_image.sprite = Осетр_надпись;
             }

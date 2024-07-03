@@ -17,7 +17,7 @@ public class RayForRod : MonoBehaviour
     }
     public IEnumerator RodCor(GameObject fish)
     {
-        yield return new WaitForSeconds(1.5f);
+        //yield return new WaitForSeconds(1.5f);
         while (true)
         {
             transform.LookAt(fish.transform.position);
