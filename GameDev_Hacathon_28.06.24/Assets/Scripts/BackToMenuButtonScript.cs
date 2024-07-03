@@ -8,6 +8,6 @@ public class BackToMenuButtonScript : MonoBehaviour
 
     public void ButtonClick()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(5);
     }
 }
