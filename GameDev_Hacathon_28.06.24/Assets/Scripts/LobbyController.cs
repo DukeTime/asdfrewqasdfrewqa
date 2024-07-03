@@ -13,7 +13,9 @@ public class LobbyController : MonoBehaviour
 
     private void Start()
     {
-        
+        coin_title.text = PlayerPrefs.GetInt("money").ToString();
+        during_location = PlayerPrefs.GetInt("during_location");
+        location_title.text = locations[during_location];
     }
     public void ChangeScene(int scene_num)
     {
@@ -26,12 +28,13 @@ public class LobbyController : MonoBehaviour
         {
             during_location += during_location != locations.Length - 1 ? 1 : 0;
             location_title.text = locations[during_location];
-
+            PlayerPrefs.SetInt("during_location", during_location);
         }
         else
         {
             during_location -= during_location != 0 ? 1 : 0;
             location_title.text = locations[during_location];
+            PlayerPrefs.SetInt("during_location", during_location);
         }
     }
 }
