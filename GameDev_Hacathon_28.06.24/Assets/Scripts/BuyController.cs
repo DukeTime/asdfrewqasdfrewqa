@@ -33,7 +33,7 @@ public class BuyController : MonoBehaviour
     {
         int balance = PlayerPrefs.GetInt("money");
 
-        // if (balance >= price & is_bought == 0){
+        if (balance >= price & is_bought == 0){
         Debug.Log("bought" + this.gameObject.name);
         PlayerPrefs.SetInt(this.gameObject.name, 1);
         
@@ -42,7 +42,7 @@ public class BuyController : MonoBehaviour
         SceneManager.LoadScene(3);
 
         PlayerPrefs.SetInt("money", balance - price);
-        // }
+        }
     }
 
     void Update()
