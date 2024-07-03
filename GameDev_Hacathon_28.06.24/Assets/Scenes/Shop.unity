@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 5868058}
   - component: {fileID: 5868057}
   - component: {fileID: 5868056}
+  - component: {fileID: 5868059}
   m_Layer: 5
   m_Name: boat4
   m_TagString: Untagged
@@ -201,7 +202,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5868057}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5868059}
+        m_MethodName: BuyItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5868057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +251,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5868054}
   m_CullTransparentMesh: 0
+--- !u!114 &5868059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5868054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfd5edefa282974b9a77e81f4ec4381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myObject: {fileID: 5868054}
 --- !u!1 &217964197
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,6 +2067,7 @@ GameObject:
   - component: {fileID: 1846893947}
   - component: {fileID: 1846893946}
   - component: {fileID: 1846893945}
+  - component: {fileID: 1846893948}
   m_Layer: 5
   m_Name: boat3
   m_TagString: Untagged
@@ -2110,7 +2136,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1846893946}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1846893948}
+        m_MethodName: BuyItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1846893946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2148,6 +2185,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1846893943}
   m_CullTransparentMesh: 0
+--- !u!114 &1846893948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846893943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfd5edefa282974b9a77e81f4ec4381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myObject: {fileID: 1846893943}
 --- !u!1 &1875128941
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,6 +2590,7 @@ GameObject:
   - component: {fileID: 2065519431}
   - component: {fileID: 2065519430}
   - component: {fileID: 2065519429}
+  - component: {fileID: 2065519432}
   m_Layer: 5
   m_Name: boat2
   m_TagString: Untagged
@@ -2608,7 +2659,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2065519430}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2065519432}
+        m_MethodName: BuyItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2065519430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2646,6 +2708,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065519427}
   m_CullTransparentMesh: 0
+--- !u!114 &2065519432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065519427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfd5edefa282974b9a77e81f4ec4381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myObject: {fileID: 2065519427}
 --- !u!1 &2067120983
 GameObject:
   m_ObjectHideFlags: 0
