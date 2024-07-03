@@ -13,7 +13,12 @@ public class BuyController : MonoBehaviour
         {"boat1", 100},
         {"boat2", 300},
         {"boat3", 500},
-        {"boat4", 700}
+        {"boat4", 700},
+        {"rod1", 100},
+        {"rod2", 300},
+        {"rod3", 500},
+        {"rod4", 700}
+
     };
 
     [SerializeField] public GameObject myObject;
