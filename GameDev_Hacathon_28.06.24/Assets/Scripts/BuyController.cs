@@ -23,6 +23,10 @@ public class BuyController : MonoBehaviour
 
     [SerializeField] public GameObject myObject;
 
+    [SerializeField] public GameObject UpgradeText;
+
+    [SerializeField] public GameObject Price;
+
     int price;
     void Start()
     {
