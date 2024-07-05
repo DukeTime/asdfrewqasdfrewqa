@@ -769,6 +769,10 @@ MonoBehaviour:
   Button: {fileID: 576528348}
   UpgradeText: {fileID: 1888288836}
   Price: {fileID: 400650453}
+  lvl1: {fileID: 21300000, guid: 2e71992a9a332f042a03fc3658d143ea, type: 3}
+  lvl2: {fileID: 21300000, guid: e00a34373b60f5a429ac74abef880b67, type: 3}
+  lvl3: {fileID: 21300000, guid: 634511d6f9bc41b499c831fcf503ad91, type: 3}
+  lvl4: {fileID: 21300000, guid: ded04635a8c051444b1c346af0f1ca81, type: 3}
 --- !u!1 &664817832
 GameObject:
   m_ObjectHideFlags: 0
