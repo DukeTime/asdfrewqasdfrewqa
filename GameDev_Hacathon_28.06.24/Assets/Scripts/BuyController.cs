@@ -41,16 +41,17 @@ public class BuyController : MonoBehaviour
     public void BuyItem()
     {
         int balance = PlayerPrefs.GetInt("money");
-
+        int currentlvl = PlayerPrefs.GetInt(this.gameObject.name+"lvl");
+        
         if (balance >= price & is_bought == 0){
         Debug.Log("bought" + this.gameObject.name);
-        PlayerPrefs.SetInt(this.gameObject.name, 1);
         
-        GetComponent<Image>().color = new Color(255/255.0f, 255/255.0f, 255/255.0f, 125/255.0f);
+        
+        
 
         SceneManager.LoadScene(3);
 
-        PlayerPrefs.SetInt("money", balance - price);
+        // PlayerPrefs.SetInt("money", balance - price);
         }
     }
 
