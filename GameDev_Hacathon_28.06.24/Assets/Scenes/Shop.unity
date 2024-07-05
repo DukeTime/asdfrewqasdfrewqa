@@ -766,9 +766,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccfd5edefa282974b9a77e81f4ec4381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myObject: {fileID: 0}
-  UpgradeText: {fileID: 0}
-  Price: {fileID: 0}
+  Button: {fileID: 576528348}
+  UpgradeText: {fileID: 1888288836}
+  Price: {fileID: 400650453}
 --- !u!1 &664817832
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,29 +21,38 @@ public class BuyController : MonoBehaviour
 
     };
 
-    [SerializeField] public GameObject myObject;
+    [SerializeField] public GameObject Button;
 
     [SerializeField] public GameObject UpgradeText;
 
     [SerializeField] public GameObject Price;
 
-    int price;
+    // string name_;
+
+    // Debug.Log(Button.name);
+
+
+    // if (Button.name == "BoatUpgradeButton"){
+    //     name = "boatlvl";
+    // }
+
+
+    // if (Button.name == "RodUpgradeButton") {
+    //     name = "rodlvl";
+    // }
+
+    // int currentlvl = PlayerPrefs.GetInt(name+"lvl") + 1;
+
     void Start()
     {
-        price = prices[this.gameObject.name];
-
-        is_bought = PlayerPrefs.GetInt(this.gameObject.name);
-        if (is_bought == 1){
-            GetComponent<Image>().color = new Color(255/255.0f, 255/255.0f, 255/255.0f, 125/255.0f);
-        }
+        
     }
 
     public void BuyItem()
     {
         int balance = PlayerPrefs.GetInt("money");
-        int currentlvl = PlayerPrefs.GetInt(this.gameObject.name+"lvl");
-        
-        if (balance >= price & is_bought == 0){
+
+
         Debug.Log("bought" + this.gameObject.name);
         
         
@@ -51,8 +60,7 @@ public class BuyController : MonoBehaviour
 
         SceneManager.LoadScene(3);
 
-        // PlayerPrefs.SetInt("money", balance - price);
-        }
+
     }
 
     void Update()
