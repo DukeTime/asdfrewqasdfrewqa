@@ -8,9 +8,9 @@ public class Moving : MonoBehaviour
     public bool MobilePlatform = false;
     public string FishType;
     private string[] FishesI = { "Щука", "Осётр", "Горбуша", "Карп", "Судак", "Толстолобик" };
-    private string[] FishesII = { "Сом", "Угорь", "Пиранья"};
+    private string[] FishesII = { "Сом", "Угорь", "Пиранья" };
 
-    private string[] Fishes = { "Карп", "Осётр", "Горбуша",  "Щука", "Толстолобик", "Судак", "Голавль", "Сом", "Угорь", "Пиранья", "Арапаима", "Акула", "Скат", "Краб"};
+    private string[] Fishes = { "Карп", "Осётр", "Горбуша", "Щука", "Толстолобик", "Судак", "Голавль", "Сом", "Угорь", "Пиранья", "Арапаима", "Акула", "Скат", "Краб" };
     [SerializeField] private Dictionary<string, int> strenghtDict = new Dictionary<string, int>()
     {
         {"Щука", 3},
@@ -63,7 +63,7 @@ public class Moving : MonoBehaviour
         {
             ranim.FishingProgress += 1;
         }
-        FishType = Fishes[8];//ran.Next(0, ranim.FishingProgress)];
+        FishType = Fishes[ran.Next(0, ranim.FishingProgress)];
         strenght = strenghtDict[FishType];
         transform.localScale = sizeDict[FishType];
     }
