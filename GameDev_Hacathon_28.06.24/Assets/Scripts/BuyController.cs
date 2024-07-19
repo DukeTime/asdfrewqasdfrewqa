@@ -5,53 +5,93 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class BuyController : MonoBehaviour
 {
-    int is_bought;
+
 
     	
-    [SerializeField] private Dictionary<string, int> prices = new Dictionary<string, int>()
-    {
-        {"boat1", 100},
-        {"boat2", 300},
-        {"boat3", 500},
-        {"boat4", 700},
-        {"rod1", 100},
-        {"rod2", 300},
-        {"rod3", 500},
-        {"rod4", 700}
 
-    };
 
-    [SerializeField] public GameObject myObject;
+    [SerializeField] public GameObject Button;
 
-    [SerializeField] public GameObject UpgradeText;
+    [SerializeField] public Image Image;
+
+    [SerializeField] public Text UpgradeText;
 
     [SerializeField] public GameObject Price;
 
-    int price;
+    [SerializeField] public Sprite lvl1;
+
+    [SerializeField] public Sprite lvl2;
+
+    [SerializeField] public Sprite lvl3;
+
+    [SerializeField] public Sprite lvl4;
+
+
+    int currentlvl;
+    string name;
+
     void Start()
     {
-        price = prices[this.gameObject.name];
 
-        is_bought = PlayerPrefs.GetInt(this.gameObject.name);
-        if (is_bought == 1){
-            GetComponent<Image>().color = new Color(255/255.0f, 255/255.0f, 255/255.0f, 125/255.0f);
-        }
+
+
+    if (Button.name == "BoatUpgradeButton"){
+        name = "boatlvl";
+    }
+
+
+    if (Button.name == "RodUpgradeButton") {
+        name = "rodlvl";
+    }
+
+    Debug.Log(name);
+    currentlvl = PlayerPrefs.GetInt(name+"lvl") + 1;
+    Debug.Log(currentlvl);
+
+
+    if (currentlvl == 1){
+       Image.sprite = lvl1;
+        UpgradeText.text = "Upgrade boat to level 2";
+    }
+
+    if (currentlvl == 2){
+       Image.sprite = lvl2;
+        UpgradeText.text = "Upgrade boat to level 3";
+    }
+
+    if (currentlvl == 2){
+       Image.sprite = lvl2;
+        UpgradeText.text = "Upgrade boat to level 4";
+    }
+
+    if (currentlvl == 2){
+       Image.sprite = lvl2;
+        UpgradeText.text = "Completely upgraded";
+    }
+
+
+
+
     }
 
     public void BuyItem()
     {
         int balance = PlayerPrefs.GetInt("money");
 
-        if (balance >= price & is_bought == 0){
-        Debug.Log("bought" + this.gameObject.name);
-        PlayerPrefs.SetInt(this.gameObject.name, 1);
-        
-        GetComponent<Image>().color = new Color(255/255.0f, 255/255.0f, 255/255.0f, 125/255.0f);
 
+        
+        if (currentlvl < 4 & balance >= (currentlvl*200 + 100)){
+
+
+            PlayerPrefs.SetInt(name+"lvl",currentlvl);
+
+        }
+        
+        
+        Debug.Log(currentlvl);
         SceneManager.LoadScene(3);
 
-        PlayerPrefs.SetInt("money", balance - price);
-        }
+
     }
 
     void Update()
